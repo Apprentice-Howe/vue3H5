@@ -1,0 +1,96 @@
+@import "cssProper";
+
+.nav-bar {
+  height: $navBarHeight;
+  width: 100%;
+  padding: $mainPadding;
+  box-sizing: border-box;
+  box-shadow: 1px 1px 1px #cccccc;
+  display: flex;
+  align-items: center;
+  .logo,
+  .tabs,
+  .buttons {
+    height: $navBarHeight;
+    line-height: $navBarHeight;
+    white-space: nowrap;
+  }
+  .logo {
+    text-align: center;
+  }
+  .tabs {
+    flex: 1;
+    margin: 0 20px;
+    display: flex;
+    .tabs-item {
+      width: auto;
+      padding: 0 20px;
+      cursor: pointer;
+      position: relative;
+      letter-spacing: 2px;
+      .tabs-item-line {
+        display: none;
+      }
+      &:hover {
+        color: #409eff;
+      }
+      &:hover .tabs-item-line{
+        content: '';
+        width: auto;
+        padding: 0 20px;
+        height: 3px;
+        background-color: #309eff;
+        position: absolute;
+        bottom: 0;
+        display: block;
+      }
+    }
+    .tabs-item-isActive {
+      color: #409eff;
+      .tabs-item-line {
+        content: '';
+        width: auto;
+        padding: 0 20px;
+        height: 3px;
+        background-color: #309eff;
+        position: absolute;
+        bottom: 0;
+        display: block;
+      }
+    }
+  }
+  .buttons{
+    .btn {
+      border: solid 1px #cccccc !important;
+      transition: all .3s linear;
+      &:hover {
+        border: solid 1px red !important;
+      }
+    }
+    .btn2 {
+      &:hover {
+        transition: all linear .3s;
+        background-color: #409eff;
+        color: #ffffff;
+      }
+    }
+  }
+}
+
+.nav-bar-menus {
+  width: 100%;
+  height: 50px;
+  line-height: 50px;
+  display: flex;
+  align-items: center;
+  padding: $mainPadding;
+  .menus-items {
+    margin: 0 20px;
+    .menus-items-text {
+      cursor: pointer;
+      &:hover {
+        color: #409eff;
+      }
+    }
+  }
+}
