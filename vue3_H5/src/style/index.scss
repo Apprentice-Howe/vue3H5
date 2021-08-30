@@ -11,6 +11,21 @@
   .nav-bar {
     padding: 0;
   }
+  .nav-bar {
+    display: none;
+  }
+  .nav-bar-mobile-main {
+    display: block;
+  }
+  .nav-bar-menus {
+    display: none;
+  }
+}
+
+@media screen and(max-width: 1399px) and (min-width: 700px) {
+  .nav-bar-menus {
+    padding: 0 200px;
+  }
 }
 
 .home {

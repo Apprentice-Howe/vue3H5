@@ -1,7 +1,7 @@
 <template>
 <!--    导航栏-->
-    <div v-if="userAgent == 'pc'"
-         @mouseleave="itemMouseleave">
+<!--  v-if="userAgent == 'pc'"-->
+    <div @mouseleave="itemMouseleave">
         <div class="nav-bar">
             <div class="logo">{{ logo }}</div>
             <div class="tabs">
@@ -22,8 +22,10 @@
         </div>
         <NavBarHover></NavBarHover>
     </div>
-    <div v-else class="nav-bar-mobile">
+    <div class="nav-bar-mobile-main">
+      <div class="nav-bar-mobile">
         <NavBarMobile></NavBarMobile>
+      </div>
     </div>
 </template>
 

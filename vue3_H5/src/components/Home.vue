@@ -16,10 +16,10 @@
                     </van-button>
                 </template>
             </NavBar>
-            <div>
-                <img src="../assets/fate.jfif"
-                     style="width: 100vw"
-                     alt="">
+            <div style="height: 1000px;width: 100%;background-color:#000;">
+<!--                <img src="../assets/fate.jfif"-->
+<!--                     style="width: 100vw"-->
+<!--                     alt="">-->
             </div>
         </van-pull-refresh>
     </div>
