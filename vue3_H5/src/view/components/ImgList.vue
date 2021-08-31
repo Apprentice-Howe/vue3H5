@@ -9,8 +9,9 @@
 
 <script>
 export default {
-  name: "ImgList",
-  setup() {
+
+  name: 'ImgList',
+  setup () {
     // let imgUrl = "../../assets/fate.jpg"
 
     return {

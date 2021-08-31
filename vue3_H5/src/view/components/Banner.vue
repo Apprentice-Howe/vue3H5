@@ -13,18 +13,18 @@
 </template>
 
 <script>
-import { ref, reactive, inject } from "vue"
+import { ref, reactive, inject } from 'vue'
 
 export default {
-  name: "Banner",
+  name: 'Banner',
   components: {
     // BannerList
   },
-  setup(props) {
-    let data = inject('bannerData')
+  setup (props) {
+    const data = inject('bannerData')
 
     return {
-      data,
+      data
     }
   }
 }

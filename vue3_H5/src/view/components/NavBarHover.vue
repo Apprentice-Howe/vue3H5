@@ -10,18 +10,18 @@
 </template>
 
 <script>
-    import { ref, reactive, inject, onUpdated } from 'vue'
-    export default {
-       setup() {
-           let index = inject('itemHover')
-           let menus = inject('itemMenus')
+import { ref, reactive, inject, onUpdated } from 'vue'
+export default {
+  setup () {
+    const index = inject('itemHover')
+    const menus = inject('itemMenus')
 
-           return {
-               index,
-               menus,
-           }
-       }
+    return {
+      index,
+      menus
     }
+  }
+}
 </script>
 
 <style scoped>

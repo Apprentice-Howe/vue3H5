@@ -14,30 +14,30 @@
 <script>
 import { ref, inject, onMounted, onUpdated } from 'vue'
 export default {
-  name: "TDrawer",
+  name: 'TDrawer',
   props: {
     title: {
       type: String,
       default: '标题'
     }
   },
-  setup() {
-    let isOpen = inject('isOpen')
-    let isClose = ref("none")
+  setup () {
+    const isOpen = inject('isOpen')
+    const isClose = ref('none')
 
-    function close() {
+    function close () {
       isOpen.value = false
     }
 
     onMounted(() => {
-      let classArr = [
+      const classArr = [
         't-drawer shake',
         'title',
-        'close',
+        'close'
       ]
       document.addEventListener('click', (e) => {
-        let className = e.target.className
-        if (className != "van-badge__wrapper van-icon van-icon-bars") {
+        const className = e.target.className
+        if (className != 'van-badge__wrapper van-icon van-icon-bars') {
           if (classArr.indexOf(className) == -1) {
             // isClose.value = "none"
             close()
@@ -77,7 +77,6 @@ export default {
     perspective: 1000px;
   }
 }
-
 
 .fade-enter-active,
 .fade-leave-active {

@@ -19,76 +19,77 @@
 </template>
 
 <script>
-    import { ref,reactive,provide,onMounted,getCurrentInstance,onUpdated  } from 'vue'
-    import { Toast } from 'vant'
-    import NavBar from "../view/components/NavBar.vue";
-    import Banner from "../view/components/Banner.vue";
-    import ImgList from "../view/components/ImgList.vue";
-    export default {
-        components: {
-            NavBar,
-            Banner,
-            ImgList
-        },
-        setup(props, context) {
-            let { proxy } = getCurrentInstance()
-            let logo = ref('农村商业银行')
-            let lists = reactive(['个人','企业','普惠'])
-            const loading = ref(false);
-            let bannerData = reactive([
-              {
-                title: '转账汇款',
-                content: '到账快，5折手续费',
-                icon: 'setting-o'
-              },
-              {
-                title: '购买理财',
-                content: '高收益',
-                icon: 'cart-o'
-              },
-              {
-                title: 'i淘金',
-                content: '1分起投，不设购买上限',
-                icon: 'location-o'
-              },
-              {
-                title: '农信快存',
-                content: '0手续费，轻松转账',
-                icon: 'phone-o'
-              },
-              {
-                title: '小时贷',
-                content: '线上申请，1小时放贷',
-                icon: 'fire-o'
-              },
-            ])
+import { ref, reactive, provide, onMounted, getCurrentInstance } from 'vue'
+import { Toast } from 'vant'
+import NavBar from '../view/components/NavBar.vue'
+import Banner from '../view/components/Banner.vue'
+import ImgList from '../view/components/ImgList.vue'
+export default {
+  components: {
+    NavBar,
+    Banner,
+    ImgList
+  },
 
-            const onRefresh = () => {
-                setTimeout(() => {
-                    Toast('刷新成功');
-                    loading.value = false;
-                }, 1000);
-            };
+  setup (props, context) {
+    const { proxy } = getCurrentInstance()
+    const logo = ref('农村商业银行')
+    const lists = reactive(['个人', '企业', '普惠'])
+    const loading = ref(false)
+    const bannerData = reactive([
+      {
+        title: '转账汇款',
+        content: '到账快，5折手续费',
+        icon: 'setting-o'
+      },
+      {
+        title: '购买理财',
+        content: '高收益',
+        icon: 'cart-o'
+      },
+      {
+        title: 'i淘金',
+        content: '1分起投，不设购买上限',
+        icon: 'location-o'
+      },
+      {
+        title: '农信快存',
+        content: '0手续费，轻松转账',
+        icon: 'phone-o'
+      },
+      {
+        title: '小时贷',
+        content: '线上申请，1小时放贷',
+        icon: 'fire-o'
+      }
+    ])
 
-            provide('bannerData', bannerData)
-
-            onMounted(() => {
-                proxy.$http.get('http://localhost:3001/video')
-                  .then(res => {
-                    console.log(res)
-                  }).catch(err => {
-                  console.log(err)
-                })
-            })
-
-            return {
-                lists,
-                logo,
-                loading,
-                onRefresh,
-            }
-        }
+    const onRefresh = () => {
+      setTimeout(() => {
+        Toast('刷新成功')
+        loading.value = false
+      }, 1000)
     }
+
+    provide('bannerData', bannerData)
+
+    onMounted(() => {
+      proxy.$http.get('http://localhost:3001/video')
+        .then(res => {
+          console.log(res)
+        }).catch(err => {
+          console.log(err)
+        })
+    })
+
+    return {
+      lists,
+      logo,
+      loading,
+      onRefresh
+    }
+  }
+}
 </script>
 
 <style scoped>

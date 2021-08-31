@@ -10,7 +10,7 @@
 
 <script>
 export default {
-  name: "BannerList",
+  name: 'BannerList',
   props: {
     title: {
       type: [String, Number],
@@ -19,9 +19,9 @@ export default {
     content: {
       type: [String, Number],
       default: ''
-    },
+    }
   },
-  setup() {
+  setup () {
     return {}
   }
 }

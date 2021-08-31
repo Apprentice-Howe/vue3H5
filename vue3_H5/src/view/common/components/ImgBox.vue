@@ -11,9 +11,9 @@
 </template>
 
 <script>
-import { ref, reactive } from 'vue'
+// import { ref, reactive } from 'vue'
 export default {
-  name: "ImgBox",
+  name: 'ImgBox',
   props: {
     title: {
       type: [String, Number],
@@ -28,10 +28,10 @@ export default {
       default: '../../../assets/fate.jpg'
     }
   },
-  setup() {
-    function getSrc(path) {
+  setup () {
+    function getSrc (path) {
       const ph = `../../../assets/${path}`
-      const modules = import.meta.globEager(`../../../assets/*.jpg`)
+      const modules = import.meta.globEager('../../../assets/*.jpg')
       return modules[ph].default
     }
 

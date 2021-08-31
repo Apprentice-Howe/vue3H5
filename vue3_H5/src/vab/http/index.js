@@ -1,8 +1,8 @@
 import axios from 'axios'
 import qs from 'qs'
 
-axios.defaults.headers.post["content-Type"] = "application/x-www-form-urlencoded;charset=UTF-8"
-axios.defaults.timeout = 10000;
+axios.defaults.headers.post['content-Type'] = 'application/x-www-form-urlencoded;charset=UTF-8'
+axios.defaults.timeout = 10000
 
 axios.interceptors.request.use((config) => {
   /*
@@ -26,7 +26,7 @@ axios.interceptors.response.use((res) => {
 })
 
 export default {
-  post(url, data) {
+  post (url, data) {
     return new Promise((resolve, reject) => {
       axios.post(url, qs.stringify(data))
         .then(res => {
@@ -37,7 +37,7 @@ export default {
         })
     })
   },
-  get(url, data) {
+  get (url, data) {
     return new Promise((resolve, reject) => {
       axios.get(url, data)
         .then(res => {

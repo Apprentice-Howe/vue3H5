@@ -18,31 +18,31 @@
 </template>
 
 <script>
-    import { ref, provide } from 'vue'
-    import TDrawer from "../common/components/TDrawer.vue";
-    export default {
-      components: {
-        TDrawer
-      },
+import { ref, provide } from 'vue'
+import TDrawer from '../common/components/TDrawer.vue'
+export default {
+  components: {
+    TDrawer
+  },
 
-        setup() {
-            let isOpen = ref(false)
+  setup () {
+    const isOpen = ref(false)
 
-            function onClickLeft() {}
-            function onClickRight() {}
-            function openDrawer() {
-              isOpen.value = true
-            }
-
-            provide('isOpen', isOpen)
-
-            return {
-                onClickLeft,
-                onClickRight,
-                openDrawer
-            }
-        }
+    function onClickLeft () {}
+    function onClickRight () {}
+    function openDrawer () {
+      isOpen.value = true
     }
+
+    provide('isOpen', isOpen)
+
+    return {
+      onClickLeft,
+      onClickRight,
+      openDrawer
+    }
+  }
+}
 </script>
 
 <style scoped>
