@@ -8,7 +8,9 @@
   },
   "dependencies": {
     "autoprefixer": "^10.3.3",
+    "axios": "^0.21.1",
     "node-sass": "^6.0.1",
+    "qs": "^6.10.1",
     "sass-loader": "^12.1.0",
     "vant": "^3.2.1",
     "vue": "^3.2.6",

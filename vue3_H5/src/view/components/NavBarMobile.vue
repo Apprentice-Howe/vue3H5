@@ -19,7 +19,7 @@
 
 <script>
     import { ref, provide } from 'vue'
-    import TDrawer from "../common/TDrawer.vue";
+    import TDrawer from "../common/components/TDrawer.vue";
     export default {
       components: {
         TDrawer

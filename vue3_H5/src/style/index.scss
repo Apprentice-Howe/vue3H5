@@ -2,13 +2,15 @@
 @import "cssProper";
 @import "navBar";
 @import "tDrawer";
+@import "banner";
+@import "imgList";
 
 * {
   margin: 0;
   padding: 0;
 }
 
-@media screen and(max-width: 699px) and (min-width: 320px) {
+@media screen and(max-width: 699px) and (min-width: 0px) {
   .nav-bar {
     padding: 0;
   }
@@ -21,13 +23,62 @@
   .nav-bar-menus {
     display: none;
   }
-}
-
-@media screen and(max-width: 1399px) and (min-width: 700px) {
-  .nav-bar-menus {
-    padding: 0 200px;
+  .t-banner {
+    //width: 100vw;
+  }
+  .list-content {
+    display: none;
+  }
+  .img-list {
+    display: block;
+    width: 60vw;
+    margin: 0;
+  }
+  .img-box {
+    margin: 10px 0;
   }
 }
+
+@media screen and(max-width: 1060px) and (min-width: 700px) {
+  .nav-bar {
+    padding: 0;
+  }
+  .nav-bar-menus {
+    padding: 0;
+    font-size: 14px;
+    .menus-items {
+      margin: 0 10px;
+    }
+  }
+  .t-banner {
+    width: 60vw;
+  }
+  .list-content {
+    display: none;
+  }
+}
+
+@media screen and(max-width: 1399px) and (min-width: 1061px) {
+  .nav-bar {
+    padding: 0 150px;
+  }
+  .nav-bar-menus {
+    padding: 0 150px;
+    .menus-items {
+      margin: 0 10px;
+    }
+  }
+  .t-banner {
+    width: 50vw;
+  }
+}
+
+@media screen and(max-width: 2000px) and (min-width: 1400px) {
+  .t-banner {
+    width: 50vw;
+  }
+}
+
 
 .home {
   //min-width: 100vw;

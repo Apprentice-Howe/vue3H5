@@ -1,15 +1,14 @@
 <template>
-  <div class="t-drawer"
-       :class="{ shake: isOpen }"
-       :style="{ dispaly: isClose }"
-       v-if="isOpen">
-    <div class="top-bar">
-      <div class="title">{{ title }}</div>
-      <div class="close" @click="close">
-        <van-icon name="cross" />
+  <transition name="fade">
+    <div class="t-drawer" v-if="isOpen">
+      <div class="top-bar">
+        <div class="title">{{ title }}</div>
+        <div class="close" @click="close">
+          <van-icon name="cross" />
+        </div>
       </div>
     </div>
-  </div>
+  </transition>
 </template>
 
 <script>
@@ -40,7 +39,7 @@ export default {
         let className = e.target.className
         if (className != "van-badge__wrapper van-icon van-icon-bars") {
           if (classArr.indexOf(className) == -1) {
-            isClose.value = "none"
+            // isClose.value = "none"
             close()
           }
         }
@@ -77,5 +76,17 @@ export default {
     width: 50vw;
     perspective: 1000px;
   }
+}
+
+
+.fade-enter-active,
+.fade-leave-active {
+  transition: all 0.5s ease;
+}
+
+.fade-enter-from,
+.fade-leave-to {
+  /*opacity: 0;*/
+  transform: translateX(-100vw);
 }
 </style>

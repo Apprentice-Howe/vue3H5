@@ -1,0 +1,36 @@
+@keyframes icon {
+  0% {
+    transform: scale(1.1);
+  }
+  50% {
+    transform: scale(0.8);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+.t-banner {
+  display: flex;
+  justify-content: space-between;
+  padding: 20px;
+  //width: 60vw;
+  margin: 10px auto;
+}
+
+
+.t-banner-list {
+  text-align: center;
+  cursor: pointer;
+  .list-icon {
+    font-size: 50px;
+    &:hover {
+      animation: icon 0.5s ease-in-out;
+    }
+  }
+  .list-content {
+    margin: 10px 0;
+    font-size: 13px;
+    color: #A9AEB4;
+  }
+}
